@@ -1,0 +1,36 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+
+}
+
+header button{
+    display: flex;
+    background-color: aquamarine;
+    
+}
+
+header h1{
+    display: flex;
+}
+
+.quiz-box{
+    height: 400px;
+    width: 600px;
+    background-color: aquamarine;
+    margin: auto;
+}
+
+.quiz-header{
+    text-align: center;
+    padding-top: 15px;
+}
+
+.start-button {
+    display: flex;
+    flex-wrap: nowrap;
+    
+
+}
