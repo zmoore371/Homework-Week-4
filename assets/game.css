@@ -1,0 +1,36 @@
+.choice-container{
+    display: flex;
+    flex-direction: row;
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    text-decoration: none;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    background-color: #4eb5f1;
+    transition: all 0.2s;
+}
+
+.choice-container:hover{
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
+
+#question{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rightwrong{
+    display: inline-block;
+    margin: auto;
+}
+
+.quiz-box{
+    height: 400px;
+    width: 600px;
+    background-color: none;
+    margin: auto;
+}
