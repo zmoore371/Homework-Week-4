@@ -13,19 +13,19 @@ var quizBox = $(".quiz-box");
 
 const myQuestions = [
     {
-        question: "Is JavaScript the same as Java?",
-        answers: ["yes","no", "maybe","ehhhhh"],
-        correctAnswer: 2,
+        question: "Inside which HTML element do we put the JavaScript?",
+        answers: ["<scripting>","<js>", "<script>","<javascript>"],
+        correctAnswer: 3,
     },
     {    
-        question: "What is my name",
-        answers: ["zach", "zcac", "clkn","slkj"],
-        correctAnswer: 1,
+        question: "What method returns the first index at which a given element can be found in an array, or -1 if it is not present?",
+        answers: ["getIndex()", "location()", "indexOf()","None of the above"],
+        correctAnswer: 3,
     },
     {
-        question: "What temp is it?",
-        answers: ["60", "70", "80", "90"],
-        correctAnswer: 3,
+        question: "What method tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. ?",
+        answers: ["reverse()", "shift()", "slice()", "some()"],
+        correctAnswer: 4,
     }
         
         //PUT A COMMA HER FOR THE NEXT QUESTION DINGUS
@@ -66,7 +66,6 @@ function userAnswer() {
     });
 }
     
-
 function nextQuestion(){
     questionNumber++
     
@@ -114,6 +113,7 @@ function startTimer(){
 
     }, 1000);
 }
+
 var score = []
 var initials = $(".highscore-input")
 
@@ -134,6 +134,10 @@ function saveHighScore() {
 
 }
 
+init();
+
+
+
 // saveButton.on("click", function(event) {
 //     event.preventDefault();
 //     saveHighScore();
@@ -143,7 +147,7 @@ function saveHighScore() {
 
 
 
-init();
+
 
 
 // button.click(function(){
