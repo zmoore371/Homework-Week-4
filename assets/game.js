@@ -5,9 +5,11 @@ var answer1 = $(".choice-text1");
 var answer2 = $(".choice-text2");
 var answer3 = $(".choice-text3");
 var answer4 = $(".choice-text4");
-var button = $(".choice-container")
-var correct = $(".correct")
-
+var button = $(".choice-container");
+var correct = $(".correct");
+var quizBox = $(".quiz-box");
+// var saveButton = $("#save");
+// var saveButton =$("btn-primary")
 
 const myQuestions = [
     {
@@ -19,9 +21,16 @@ const myQuestions = [
         question: "What is my name",
         answers: ["zach", "zcac", "clkn","slkj"],
         correctAnswer: 1,
-    }//PUT A COMMA HER FOR THE NEXT QUESTION DINGUS
+    },
+    {
+        question: "What temp is it?",
+        answers: ["60", "70", "80", "90"],
+        correctAnswer: 3,
+    }
+        
+        //PUT A COMMA HER FOR THE NEXT QUESTION DINGUS
 ]
-maxQuestions = 2 // change this number to max num questions, could also probably compare to array length but this seems easier for now
+maxQuestions = 3 // change this number to max num questions, could also probably compare to array length but this seems easier for now
 questionNumber = 0 //if i increment this by 1 it will change the question and answer choices
 userScore = 0
 
@@ -57,8 +66,6 @@ function userAnswer() {
     });
 }
     
-    
-   
 
 function nextQuestion(){
     questionNumber++
@@ -73,18 +80,17 @@ function nextQuestion(){
 }
 
 function endGame() { 
-    button.hide();
-    question.hide();
+    // button.hide();
+    // question.remove();
+    quizBox.remove();
+    highscoreForm.show();
     clearInterval(timer);
-    console.log('hello')
+    // console.log('hello')
 
 }
 
-
-
-
 function init(){
-    secondsLeft = 15;
+    secondsLeft = 10000;
     questionCounter = 0
     score = 0 
     startTimer();
@@ -108,6 +114,34 @@ function startTimer(){
 
     }, 1000);
 }
+var score = []
+var initials = $(".highscore-input")
+
+function saveHighScore() {
+    var scoresList = {
+        initials: initials.value,
+        score: userScore
+    }
+    localStorage.setItem("leaderboard", JSON.stringify(scoresList));
+
+
+    $("#save").on("click", function(event) {
+        event.preventDefault();
+        saveHighScore();
+        console.log('hello')
+    })
+    
+
+}
+
+// saveButton.on("click", function(event) {
+//     event.preventDefault();
+//     saveHighScore();
+//     console.log('hello')
+// })
+
+
+
 
 init();
 
