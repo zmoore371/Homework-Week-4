@@ -1,11 +1,13 @@
 var timeEl = $(".timer");
-
+var highscoreForm = $('.highscore-input')
 var question = $("#question");
 var answer1 = $(".choice-text1");
 var answer2 = $(".choice-text2");
 var answer3 = $(".choice-text3");
 var answer4 = $(".choice-text4");
 var button = $(".choice-container")
+var correct = $(".correct")
+
 
 const myQuestions = [
     {
@@ -32,13 +34,6 @@ function writeQustion() {
     
 }
 
-
-// function getNewQuestion() {
-
-
-// }
-
-
 button.click(userAnswer())
 
 
@@ -51,13 +46,16 @@ function userAnswer() {
             userScore = userScore+100
             console.log(userScore)
             nextQuestion(); 
+            correct.show();
+            setTimeout(function() {correct.hide(); }, 1000)
             return userScore;
+            
         
         } else {
             nextQuestion();
         }
     });
-    
+}
     
     
    
@@ -65,7 +63,6 @@ function userAnswer() {
 function nextQuestion(){
     questionNumber++
     
-
     if(questionNumber < maxQuestions){
        writeQustion();
     } else {
@@ -73,7 +70,6 @@ function nextQuestion(){
         endGame();
     }
     
-
 }
 
 function endGame() { 
@@ -93,6 +89,8 @@ function init(){
     score = 0 
     startTimer();
     writeQustion();
+    highscoreForm.hide();
+    correct.hide();
 
 }
 
@@ -104,6 +102,7 @@ function startTimer(){
       if(secondsLeft === 0) {
         clearInterval(timer);
         endGame();
+
       }
     
 
@@ -162,4 +161,3 @@ init();
     // } else {
     //     console.log(ansNum)
     // }
-}
