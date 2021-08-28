@@ -26,7 +26,7 @@ const myQuestions = [
 ]
 maxQuestions = 4
 questionNumber = 0 //if i increment this by 1 it will change the question and answer choices
-
+userScore = 0
 
 function writeQustion() {
     question.text(myQuestions[questionNumber].question)
@@ -34,45 +34,73 @@ function writeQustion() {
     answer2.text(myQuestions[questionNumber].answers[1])
     answer3.text(myQuestions[questionNumber].answers[2])
     answer4.text(myQuestions[questionNumber].answers[3])
-    checkRightAnswer();
+    // button.click(userAnswer());//this successfully runs useranswer on button click
+    
 }
 
 
-function getNewQuestion() {
+// function getNewQuestion() {
 
 
-}
+// }
 
 
+button.click(userAnswer())
 
 
-function checkRightAnswer() {
-    let ans = $("button").click(function() {
+function userAnswer() {
+    $("button").click(function() {
         var fired_button = $(this).val();
-        alert(fired_button);
-        console.log(fired_button)
-        console.log(typeof fired_button)
+        var isCorrect = +fired_button 
+        rightAnswer = myQuestions[questionNumber].correctAnswer
+        if(rightAnswer === isCorrect){
+            userScore = userScore+100
+            console.log(userScore)
+            isRightAnswer(); 
+            return userScore;
+        
+        } else {
+            isRightAnswer();
+        }
+        
+        
+        // console.log(fired_button);
+        // console.log(typeof rightAnswer); //firedbutton is a number here\
+        
+        // isRightAnswer();
+        
+
+
+
     });
-    ansNum = +ans
+    
+    
+    
+   
 
-    // if (ans !== myQuestions[questionNumber].correctAnswer) {
-    //     console.log('Hello')
-    //     questionNumber + 1
+function isRightAnswer(){
+    // var isCorrect 
+    // console.log(isCorrect)///WHY THE FUCK IS THIS RUNNING BEFORE THE FUNCTION IS FUCKING CALLED 
 
-    // }
-
-    if (isNaN(ansNum) === true){
-        console.log('hiya')
-        checkRightAnswer(); //oops
-    } else {
-        console.log(ansNum)
-    }
-
-
+    // rightAnswer = myQuestions[questionNumber].correctAnswer
+    // console.log(rightAnswer)//right answer is correctly selecting the number from array
 
     
 
+
+    questionNumber++
+
+    //if current question is not greater than question length, 
+
+    writeQustion();
+
+    //else endquiz, show results
+
 }
+
+
+
+
 
 writeQustion();
 
@@ -81,7 +109,7 @@ function init(){
 
     questionCounter = 0
     score = 0 
-    getNewQuestion();
+    // getNewQuestion();
     
     startTimer();
 
@@ -130,6 +158,27 @@ init();
 // using the button method above you are able to store the number of the button clicked. now we need to figure out how to turn it from a sring to an interger and compare it to the correct answer under each question; lunchtime 
 
 
-var abc = "16"
-var abcd = +abc
-console.log(typeof abcd)
+// var abc = "16"
+// var abcd = +abc
+// console.log(typeof abcd)  PROOF OF CONCEPT
+// console.log(typeof abc)
+
+
+ // ansNum = +ans
+    // console.log(ans)
+    // console.log(fired_button)
+    // if (ans !== myQuestions[questionNumber].correctAnswer) {
+    //     console.log('Hello')
+    //     questionNumber + 1
+
+    // }
+
+    // if (isNaN(ansNum) === false){
+    //     console.log('hiya')
+    //     console.log(ansNum)
+    //     console.log(typeof ansNum)
+    //     // checkRightAnswer(); //oops
+    // } else {
+    //     console.log(ansNum)
+    // }
+}
