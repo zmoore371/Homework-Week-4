@@ -6,11 +6,6 @@ var answer2 = $(".choice-text2");
 var answer3 = $(".choice-text3");
 var answer4 = $(".choice-text4");
 var button = $(".choice-container")
-// var button1 = $('.choice-container1');
-// var button2 = $('.choice-container2');
-// var button3 = $('.choice-container3');
-// var button4 = $('.choice-container4');
-
 
 const myQuestions = [
     {
@@ -24,7 +19,7 @@ const myQuestions = [
         correctAnswer: 1,
     }//PUT A COMMA HER FOR THE NEXT QUESTION DINGUS
 ]
-maxQuestions = 4
+maxQuestions = 2 // change this number to max num questions, could also probably compare to array length but this seems easier for now
 questionNumber = 0 //if i increment this by 1 it will change the question and answer choices
 userScore = 0
 
@@ -34,7 +29,6 @@ function writeQustion() {
     answer2.text(myQuestions[questionNumber].answers[1])
     answer3.text(myQuestions[questionNumber].answers[2])
     answer4.text(myQuestions[questionNumber].answers[3])
-    // button.click(userAnswer());//this successfully runs useranswer on button click
     
 }
 
@@ -56,62 +50,49 @@ function userAnswer() {
         if(rightAnswer === isCorrect){
             userScore = userScore+100
             console.log(userScore)
-            isRightAnswer(); 
+            nextQuestion(); 
             return userScore;
         
         } else {
-            isRightAnswer();
+            nextQuestion();
         }
-        
-        
-        // console.log(fired_button);
-        // console.log(typeof rightAnswer); //firedbutton is a number here\
-        
-        // isRightAnswer();
-        
-
-
-
     });
     
     
     
    
 
-function isRightAnswer(){
-    // var isCorrect 
-    // console.log(isCorrect)///WHY THE FUCK IS THIS RUNNING BEFORE THE FUNCTION IS FUCKING CALLED 
-
-    // rightAnswer = myQuestions[questionNumber].correctAnswer
-    // console.log(rightAnswer)//right answer is correctly selecting the number from array
-
+function nextQuestion(){
+    questionNumber++
     
 
+    if(questionNumber < maxQuestions){
+       writeQustion();
+    } else {
+        console.log('no more questions')
+        endGame();
+    }
+    
 
-    questionNumber++
+}
 
-    //if current question is not greater than question length, 
-
-    writeQustion();
-
-    //else endquiz, show results
+function endGame() { 
+    button.hide();
+    question.hide();
+    clearInterval(timer);
+    console.log('hello')
 
 }
 
 
 
 
-
-writeQustion();
-
 function init(){
     secondsLeft = 15;
-
     questionCounter = 0
     score = 0 
-    // getNewQuestion();
-    
     startTimer();
+    writeQustion();
 
 }
 
@@ -122,7 +103,7 @@ function startTimer(){
       
       if(secondsLeft === 0) {
         clearInterval(timer);
-        // call function to game over
+        endGame();
       }
     
 
