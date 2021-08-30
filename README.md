@@ -17,12 +17,12 @@ To add questions or remove simply edit the myQuestions array in the Javascript. 
 ## Screenshots
 The following images demonstate the web applications apperance and functionality:
 
-![Main webpage with links to highscore and start quiz button](./images/...)
+![Main webpage with links to highscore and start quiz button](./images/main-page.png)
 
-![Quiz application in first stage with questions, answers, and timer](./images/...)
+![Quiz application in first stage with questions, answers, and timer](./images/quiz-during.png)
 
-![Quiz application with quiz finished and requesting user input](./images/...)
+![Quiz application with quiz finished and requesting user input](./images/quiz-end.png)
 
-![Leaderboard webpage showing leaderboard scores](./images/....)
+![Leaderboard webpage showing leaderboard scores](./images/leaderboard-page.png)
 
 

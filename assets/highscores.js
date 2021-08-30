@@ -11,7 +11,7 @@ function renderScores() {
     var li = document.createElement("li");
     li.textContent = score[0] + ": " + score [1];
     li.setAttribute("data-index", i);
-
+    // Do something in here to sort the list before you append it but also may need to put it befoer you even create a list element???? if this is where I die on it then so be it.
     scoreList.append(li);
   }
 }
@@ -35,3 +35,4 @@ reset.on("click", function(){
 })
 
 init();
+
