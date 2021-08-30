@@ -1,8 +1,7 @@
 var timeEl = $(".timer");
 // var highscoreForm = $('.highscore-input')
 var initialsForm = $('.initials-form')
-
-
+var yourScore = $('.your-score-was')
 var question = $("#question");
 var answer1 = $(".choice-text1");
 var answer2 = $(".choice-text2");
@@ -84,6 +83,7 @@ function nextQuestion(){
 function endGame() { 
     quizBox.remove();
     initialsForm.show();
+    yourScore.text("Congats! Your score was: " + userScore)
     clearInterval(timer);
    
 
