@@ -10,8 +10,7 @@ var answer4 = $(".choice-text4");
 var button = $(".choice-container");
 var correct = $(".correct");
 var quizBox = $(".quiz-box");
-// var saveButton = $("#save");
-// var saveButton =$("btn-primary")
+
 
 const myQuestions = [
     {
@@ -42,11 +41,9 @@ function writeQustion() {
     answer2.text(myQuestions[questionNumber].answers[1])
     answer3.text(myQuestions[questionNumber].answers[2])
     answer4.text(myQuestions[questionNumber].answers[3])
-    
 }
 
 button.click(userAnswer())
-
 
 function userAnswer() {
     $("button").click(function() {
@@ -85,8 +82,8 @@ function endGame() {
     initialsForm.show();
     yourScore.text("Congats! Your score was: " + userScore)
     clearInterval(timer);
-   
-
+    timeEl.hide();
+    
 }
 
 function init(){
@@ -97,7 +94,6 @@ function init(){
     writeQustion();
     initialsForm.hide();
     correct.hide();
-
 }
 
 function startTimer(){
@@ -115,31 +111,11 @@ function startTimer(){
     }, 1000);
 }
 
-// var score = []
-// var initials = $(".highscore-input")
 
-// function saveHighScore() {
-//     var scoresList = {
-//         initials: initials.value,
-//         score: userScore
-//     }
-//     localStorage.setItem("leaderboard", JSON.stringify(scoresList));
-
-
-//     $("#save").on("click", function(event) {
-//         event.preventDefault();
-//         saveHighScore();
-//         console.log('hello')
-//     })
-    
-
-// }
 
 init();
 
 var initialsInput = $('#input-text')
-// var initialsForm = $('#intitials-form')
-
 var highscoreList = []
 
 function storeInitials() {
@@ -177,12 +153,6 @@ initialsForm.on("submit", function(event) {
 //     saveHighScore();
 //     console.log('hello')
 // })
-
-
-
-
-
-
 
 // button.click(function(){
 //     answerChoice = this.button.text();
@@ -233,3 +203,23 @@ initialsForm.on("submit", function(event) {
     // } else {
     //     console.log(ansNum)
     // }
+
+    // var score = []
+// var initials = $(".highscore-input")
+
+// function saveHighScore() {
+//     var scoresList = {
+//         initials: initials.value,
+//         score: userScore
+//     }
+//     localStorage.setItem("leaderboard", JSON.stringify(scoresList));
+
+
+//     $("#save").on("click", function(event) {
+//         event.preventDefault();
+//         saveHighScore();
+//         console.log('hello')
+//     })
+    
+
+// }

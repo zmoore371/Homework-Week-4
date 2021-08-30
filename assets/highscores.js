@@ -1,22 +1,31 @@
-var todoInput = document.querySelector("#todo-text");
-var todoForm = document.querySelector("#todo-form");
-var scoreList = document.querySelector("#score-list");
+scoreList = $('#score-list')
+
+highscoreList = JSON.parse(localStorage.getItem("Scores"))
 
 
 function renderScores() {
-    // TODO: Describe the functionality of the following two lines of code.
+
     scoreList.innerHTML = "";
 
-    // TODO: Describe the functionality of the following `for` loop.
-    for (var i = 0; i < todos.length; i++) {
-      var score = todos[i];
+    for (var i = 0; i < highscoreList.length; i++) {
+      var score = highscoreList[i];
   
       var li = document.createElement("li");
       li.textContent = score;
       li.setAttribute("data-index", i);
   
-      li.appendChild(button);
-      todoList.appendChild(li);
+      scoreList.append(li);
     }
-  }
+}
+
+function init() {
   
+    var storedScores = JSON.parse(localStorage.getItem("Scores"));
+    if (storedScores !== null) {
+      scores = storedScores;
+    }
+    renderScores();
+}
+  
+
+init();
