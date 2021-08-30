@@ -52,3 +52,8 @@ header h1{
     margin: auto;
     border: none;
 }
+
+#score-list{
+    font-size: 26px;
+    background-color: aquamarine;
+}

@@ -104,19 +104,14 @@ function startTimer(){
       if(secondsLeft === 0) {
         clearInterval(timer);
         endGame();
-
       }
-    
-
     }, 1000);
 }
-
-
 
 init();
 
 var initialsInput = $('#input-text')
-var highscoreList = []
+var highscoreList = JSON.parse(localStorage.getItem("Scores"));
 
 function storeInitials() {
     localStorage.setItem("Scores", JSON.stringify(highscoreList))
@@ -126,7 +121,7 @@ initialsForm.on("submit", function(event) {
     event.preventDefault();
     var initialsText = initialsInput.val();
     console.log(initialsText)
-    
+    localStorage.getItem("Scores")
     if(initialsText === "") {
         return;
     }
@@ -136,7 +131,7 @@ initialsForm.on("submit", function(event) {
     window.location.href="./highscores.html"
 })
 
-
+// var storedScores = JSON.parse(localStorage.getItem("Scores"));
 
 
 
