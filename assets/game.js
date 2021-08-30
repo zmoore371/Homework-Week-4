@@ -157,7 +157,7 @@ initialsForm.on("submit", function(event) {
     highscoreList.push([initialsText,userScore]);
     console.log('Hello')
     storeInitials();
-
+    window.location.href="./highscores.html"
 })
 
 
