@@ -105,8 +105,6 @@ function endGame() {
 
 }
 
-
-
 function init() {
     secondsLeft = 180;
     questionCounter = 0
