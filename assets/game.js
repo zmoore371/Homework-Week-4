@@ -82,12 +82,10 @@ function nextQuestion(){
 }
 
 function endGame() { 
-    // button.hide();
-    // question.remove();
     quizBox.remove();
     initialsForm.show();
     clearInterval(timer);
-    // console.log('hello')
+   
 
 }
 
@@ -139,27 +137,28 @@ function startTimer(){
 
 init();
 
-// var initialsInput = $('#input-text')
+var initialsInput = $('#input-text')
 // var initialsForm = $('#intitials-form')
 
-// var highscoreList = []
+var highscoreList = []
 
-// function storeInitials() {
+function storeInitials() {
+    localStorage.setItem("Scores", JSON.stringify(highscoreList))
+}
 
-//     localStorage.setItem("Scores", JSON.stringify(highscoreList))
-// }
+initialsForm.on("submit", function(event) {
+    event.preventDefault();
+    var initialsText = initialsInput.val();
+    console.log(initialsText)
+    
+    if(initialsText === "") {
+        return;
+    }
+    highscoreList.push([initialsText,userScore]);
+    console.log('Hello')
+    storeInitials();
 
-// initialsForm.on("submit", function(event) {
-//     event.preventDefault();
-//     var initialsText = initialsInput.value.trim();
-//     if(initialsText === "") {
-//         return;
-//     }
-//     todos.push([inputText,userScore]);
-//     console.log('Hello')
-//     storeInitials();
-
-// })
+})
 
 
 
