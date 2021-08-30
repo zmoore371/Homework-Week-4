@@ -30,13 +30,11 @@
 }
 
 .quiz-box{
-   
     width: 600px;
     background-color: none;
     margin: auto;
 }
-
-.highscore-input{
+.initials-form{
     width: 600px;
     justify-content: center;
     margin: auto;

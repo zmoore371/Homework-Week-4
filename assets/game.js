@@ -1,5 +1,8 @@
 var timeEl = $(".timer");
-var highscoreForm = $('.highscore-input')
+// var highscoreForm = $('.highscore-input')
+var initialsForm = $('.initials-form')
+
+
 var question = $("#question");
 var answer1 = $(".choice-text1");
 var answer2 = $(".choice-text2");
@@ -82,7 +85,7 @@ function endGame() {
     // button.hide();
     // question.remove();
     quizBox.remove();
-    highscoreForm.show();
+    initialsForm.show();
     clearInterval(timer);
     // console.log('hello')
 
@@ -94,7 +97,7 @@ function init(){
     score = 0 
     startTimer();
     writeQustion();
-    highscoreForm.hide();
+    initialsForm.hide();
     correct.hide();
 
 }
@@ -114,27 +117,59 @@ function startTimer(){
     }, 1000);
 }
 
-var score = []
-var initials = $(".highscore-input")
+// var score = []
+// var initials = $(".highscore-input")
 
-function saveHighScore() {
-    var scoresList = {
-        initials: initials.value,
-        score: userScore
-    }
-    localStorage.setItem("leaderboard", JSON.stringify(scoresList));
+// function saveHighScore() {
+//     var scoresList = {
+//         initials: initials.value,
+//         score: userScore
+//     }
+//     localStorage.setItem("leaderboard", JSON.stringify(scoresList));
 
 
-    $("#save").on("click", function(event) {
-        event.preventDefault();
-        saveHighScore();
-        console.log('hello')
-    })
+//     $("#save").on("click", function(event) {
+//         event.preventDefault();
+//         saveHighScore();
+//         console.log('hello')
+//     })
     
 
-}
+// }
 
 init();
+
+// var initialsInput = $('#input-text')
+// var initialsForm = $('#intitials-form')
+
+// var highscoreList = []
+
+// function storeInitials() {
+
+//     localStorage.setItem("Scores", JSON.stringify(highscoreList))
+// }
+
+// initialsForm.on("submit", function(event) {
+//     event.preventDefault();
+//     var initialsText = initialsInput.value.trim();
+//     if(initialsText === "") {
+//         return;
+//     }
+//     todos.push([inputText,userScore]);
+//     console.log('Hello')
+//     storeInitials();
+
+// })
+
+
+
+
+
+
+
+
+
+
 
 
 
