@@ -79,6 +79,7 @@ function userAnswer() {
 
 
         } else {
+            secondsLeft -= 30;
             nextQuestion();
         }
     });
