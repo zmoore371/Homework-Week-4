@@ -103,7 +103,6 @@ function endGame() {
     yourScore.text("Congrats! Your score was: " + userScore)
     clearInterval(timer);
     timeEl.hide();
-
 }
 
 function init() {
@@ -145,20 +144,13 @@ initialsForm.on("submit", function (event) {
         return;
     }
 
-    highscoreList.push([initialsText, userScore]);
+    highscoreList.push({
+        initialsText,
+        userScore
+        });
 
     storeInitials();
     window.location.href = "./highscores.html"
 })
 
 init();
-
-
-
-
-
-
-
-
-
-

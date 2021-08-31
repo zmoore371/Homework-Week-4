@@ -1,6 +1,6 @@
 # Homework Week 4 JavaScript Quiz Project
 
-This homework was to create html pages, style them with CSS and make them functional through JavaScript. The simple quiz is comprised of 3 html pages, 2 JavaScript files and 2 CSS style sheets. 
+This homework was to create a JavaScript quiz by creating html pages, styling them with CSS and then making them functional with JavaScript. 
 
 ## Instructions for use
 

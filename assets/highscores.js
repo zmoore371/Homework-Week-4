@@ -5,19 +5,26 @@ highscoreList = JSON.parse(localStorage.getItem("Scores"))
 function renderScores() {
 
   scoreList.innerHTML = "";
+  highscoreList = highscoreList.sort(function (a,b) {
+    b.userScore - a.userScore
+    console.log(a)
+    console.log(b) 
+  })
+
+
+  console.log(highscoreList);
   for (var i = 0; i < highscoreList.length; i++) {
     var score = highscoreList[i];
-
+    
     var li = document.createElement("li");
-    li.textContent = score[0] + ": " + score [1];
+    li.textContent = score.initialsText + ": " + score.userScore;
     li.setAttribute("data-index", i);
-    // Do something in here to sort the list before you append it but also may need to put it befoer you even create a list element???? if this is where I die on it then so be it.
     scoreList.append(li);
+    
   }
 }
 
 function init() {
-
   var storedScores = JSON.parse(localStorage.getItem("Scores"));
   if (storedScores !== null) {
     scores = storedScores;
