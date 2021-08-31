@@ -1,17 +1,13 @@
 var scoreList = $('#score-list')
 var reset = $(".card")
-highscoreList = JSON.parse(localStorage.getItem("Scores"))
+var highscoreList = JSON.parse(localStorage.getItem("Scores"))
 
 function renderScores() {
 
   scoreList.innerHTML = "";
   highscoreList = highscoreList.sort(function (a,b) {
-    b.userScore - a.userScore
-    console.log(a)
-    console.log(b) 
-  })
-
-
+    return b.userScore - a.userScore;
+  });
   console.log(highscoreList);
   for (var i = 0; i < highscoreList.length; i++) {
     var score = highscoreList[i];
