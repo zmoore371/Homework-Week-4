@@ -26,3 +26,6 @@ The following images demonstate the web applications apperance and functionality
 ![Leaderboard webpage showing leaderboard scores](./images/leaderboard-page.png)
 
 
+## Link to deployed application
+
+Follow this link to access the application live https://zmoore371.github.io/Homework-Week-4/index.html
